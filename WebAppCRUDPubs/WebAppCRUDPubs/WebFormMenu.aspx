@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            ajsdgajkshdg
+            <asp:HyperLink runat="server" Text="Cadastro de Livros" NavigateUrl="~/WebFormTitle.aspx"></asp:HyperLink>
         </div>
     </form>
 </body>
