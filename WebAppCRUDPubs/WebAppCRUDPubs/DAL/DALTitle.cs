@@ -65,9 +65,18 @@ namespace WebAppCRUDPubs.DAL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
             SqlCommand cmd = new SqlCommand("DELETE FROM Titles WHERE Title_ID = @title_id", conn);
+            SqlCommand cmdAT = new SqlCommand("DELETE FROM titleauthor WHERE Title_ID = @title_id", conn);
+            SqlCommand cmdSales = new SqlCommand("DELETE FROM sales WHERE Title_ID = @title_id", conn);
+            SqlCommand cmdRoy = new SqlCommand("DELETE FROM roysched WHERE Title_ID = @title_id", conn);
             cmd.Parameters.AddWithValue("@title_id", obj.title_id);
+            cmdAT.Parameters.AddWithValue("@title_id", obj.title_id);
+            cmdSales.Parameters.AddWithValue("@title_id", obj.title_id);
+            cmdRoy.Parameters.AddWithValue("@title_id", obj.title_id);
 
             // Executa Comando
+            cmdAT.ExecuteNonQuery();
+            cmdSales.ExecuteNonQuery();
+            cmdRoy.ExecuteNonQuery();
             cmd.ExecuteNonQuery();
 
         }
@@ -83,6 +92,7 @@ namespace WebAppCRUDPubs.DAL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
             SqlCommand cmd = new SqlCommand("INSERT INTO Titles(title_id, title, pub_id) VALUES(@title_id, @title, @pub_id)", conn);
+
             cmd.Parameters.AddWithValue("@title_id", obj.title_id);
             cmd.Parameters.AddWithValue("@title", obj.title);
             cmd.Parameters.AddWithValue("@pub_id", obj.pub_id);
@@ -129,7 +139,7 @@ namespace WebAppCRUDPubs.DAL
             SqlCommand cmd = conn.CreateCommand();
 
             // Define SQL do comando
-            cmd.CommandText = "Slect * from Titles Where title_id = @title_id";
+            cmd.CommandText = "Select * from Titles Where title_id = @title_id";
             cmd.Parameters.AddWithValue("@title_id", title_id);
 
             // Executa comando, gerando objeto DbDataReader

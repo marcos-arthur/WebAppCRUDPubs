@@ -67,10 +67,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="script.js" />
+    <Content Include="Style.css" />
     <Content Include="Web.config" />
     <Content Include="WebFormMenu.aspx" />
     <Content Include="WebFormTitle.aspx" />
     <Content Include="WebFormTitleEdit.aspx" />
+    <Content Include="WebFormTitleNew.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\DALTitle.cs" />
@@ -96,6 +99,13 @@
     </Compile>
     <Compile Include="WebFormTitleEdit.aspx.designer.cs">
       <DependentUpon>WebFormTitleEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormTitleNew.aspx.cs">
+      <DependentUpon>WebFormTitleNew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormTitleNew.aspx.designer.cs">
+      <DependentUpon>WebFormTitleNew.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

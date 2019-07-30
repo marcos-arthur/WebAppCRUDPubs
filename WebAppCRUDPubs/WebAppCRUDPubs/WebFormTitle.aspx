@@ -35,6 +35,8 @@
                 <SortedDescendingHeaderStyle BackColor="#15524A" />
             </asp:GridView>
             <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebAppCRUDPubs.Modelo.Titles" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="WebAppCRUDPubs.DAL.DALTitle" UpdateMethod="Update"></asp:ObjectDataSource>
+            <br />
+            <asp:HyperLink runat="server" Text="Inserir novo livro" NavigateUrl="~\\WebFormTitleNew.aspx"></asp:HyperLink>
         </div>        
     </form>
 </body>
