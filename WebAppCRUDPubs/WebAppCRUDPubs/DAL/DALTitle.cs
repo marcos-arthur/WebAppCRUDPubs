@@ -111,6 +111,47 @@ namespace WebAppCRUDPubs.DAL
             cmd.ExecuteNonQuery();
         }
 
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Titles> Select(string title_id) {
+            // Variável para armazenar um livro
+            Modelo.Titles aTitle;
+
+            // Cria lista vazia
+            List<Modelo.Titles> aListTitles = new List<Modelo.Titles>();
+
+            // Cria conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            // Abre conexão com banco de dados
+            conn.Open();
+
+            // Cria comando SQL
+            SqlCommand cmd = conn.CreateCommand();
+
+            // Define SQL do comando
+            cmd.CommandText = "Slect * from Titles Where title_id = @title_id";
+            cmd.Parameters.AddWithValue("@title_id", title_id);
+
+            // Executa comando, gerando objeto DbDataReader
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            // Lê título do livro do resultado e apresenta no segundo rótulo
+            if (dr.HasRows) {
+                while (dr.Read()){ // Lê o próximo registro
+                    // Cria objeto com dados lidos do banco de dados
+                    aTitle = new Modelo.Titles(dr["title_id"].ToString(), dr["title"].ToString(), dr["pub_id"].ToString());
+
+                    // Adiciona o livro à listra
+                    aListTitles.Add(aTitle);
+                }
+            }
+            // Fecha DataReader
+            dr.Close();
+            // Fecha Conexão
+            conn.Close();
+
+            return aListTitles;
+        }
 
 
 
