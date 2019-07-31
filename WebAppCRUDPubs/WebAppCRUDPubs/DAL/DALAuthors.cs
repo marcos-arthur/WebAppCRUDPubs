@@ -96,7 +96,43 @@ namespace WebAppCRUDPubs.DAL
             cmd.Parameters.AddWithValue("@phone", obj.phone);
             cmd.Parameters.AddWithValue("@address", obj.address);
             cmd.Parameters.AddWithValue("@city", obj.city);
+
+            cmd.ExecuteNonQuery();
         }
+
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Authors> Select(string au_id) {
+            Modelo.Authors aAuthors;
+
+            List<Modelo.Authors> aListAuthors = new List<Modelo.Authors>();
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            conn.Open();
+
+            SqlCommand cmd = conn.CreateCommand();
+
+            cmd.CommandText = "Select * From Authors Where au_id = @au_id";
+            cmd.Parameters.AddWithValue("@au_id", au_id);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows) {
+                while (dr.Read()) {
+                    aAuthors = new Modelo.Authors(dr["au_id"].ToString(), dr["au_fname"].ToString(), dr["au_lname"].ToString(), dr["phone"].ToString(), dr["address"].ToString(), dr["city"].ToString(), dr["state"].ToString());
+
+                    aListAuthors.Add(aAuthors);
+                }
+            }
+
+            dr.Close();
+
+            conn.Close();
+
+            return aListAuthors;
+        }
+
+
 
     }
 }
