@@ -13,5 +13,20 @@ namespace WebAppCRUDPubs
         {
 
         }
+
+        protected void Editar(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Editar") {
+                string codigo;
+
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                codigo = GridviewAuthors.Rows[index].Cells[0].Text;
+
+                Session["author_id"] = codigo;
+
+                Response.Redirect("~\\WebFormAuthorsEdit.aspx");
+            }
+        }
     }
 }

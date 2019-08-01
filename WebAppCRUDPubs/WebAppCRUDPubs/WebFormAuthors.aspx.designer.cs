@@ -22,6 +22,15 @@ namespace WebAppCRUDPubs {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// Controle GridviewAuthors.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridviewAuthors;
+        
+        /// <summary>
         /// Controle ObjectDataSource1.
         /// </summary>
         /// <remarks>
