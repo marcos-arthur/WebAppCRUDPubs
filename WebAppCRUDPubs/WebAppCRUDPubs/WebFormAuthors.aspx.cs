@@ -27,6 +27,17 @@ namespace WebAppCRUDPubs
 
                 Response.Redirect("~\\WebFormAuthorsEdit.aspx");
             }
+            if(e.CommandName == "Inserir") { //Configurar inserção para o autor
+                string codigo;
+
+                int index = Convert.ToInt32(e.CommandArgument);
+
+                codigo = GridviewAuthors.Rows[index].Cells[0].Text;
+
+                Session["author_id"] = codigo;
+
+                Response.Redirect("~\\WebFormTitleNew.aspx");
+            }
         }
     }
 }

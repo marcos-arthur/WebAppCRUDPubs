@@ -13,5 +13,23 @@ namespace WebAppCRUDPubs
         {
 
         }
+        
+        protected void Deleted(object sender, ObjectDataSourceStatusEventArgs e)
+        {
+            string codigo;
+            Modelo.Authors aAuthors;
+            DAL.DALAuthors aDALAuthors;
+
+            codigo = Detalhes.Rows[0].Cells[1].Text;
+
+            aAuthors = new Modelo.Authors();
+            aAuthors.author_id = codigo;
+
+            aDALAuthors = new DAL.DALAuthors();
+
+            aDALAuthors.Delete(aAuthors);
+
+            Response.Redirect("~\\WebFormAuthors.aspx");
+        }
     }
 }

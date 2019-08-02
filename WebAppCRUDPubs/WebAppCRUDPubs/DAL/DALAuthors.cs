@@ -56,8 +56,11 @@ namespace WebAppCRUDPubs.DAL
             SqlCommand com = conn.CreateCommand();
 
             SqlCommand cmd = new SqlCommand("Delete From Authors Where au_id = @au_id", conn);
+            SqlCommand cmdAT = new SqlCommand("DELETE FROM titleauthor WHERE au_id = @au_id", conn);            
             cmd.Parameters.AddWithValue("@au_id", obj.author_id);
+            cmdAT.Parameters.AddWithValue("@au_id", obj.author_id);
 
+            cmdAT.ExecuteNonQuery();
             cmd.ExecuteNonQuery();
         }
 
@@ -69,7 +72,7 @@ namespace WebAppCRUDPubs.DAL
 
             SqlCommand com = conn.CreateCommand();
 
-            SqlCommand cmd = new SqlCommand("Insert Into Authors(au_id, au_fname, au_lname, phone, address, city, state) Values(@au_id, @au_fname, @au_lname, @phone, @address, @city, @state)", conn);
+            SqlCommand cmd = new SqlCommand("Insert Into Authors(au_id, au_fname, au_lname, phone, address, city, state, contract) Values(@au_id, @au_fname, @au_lname, @phone, @address, @city, @state, @contract)", conn);
 
             cmd.Parameters.AddWithValue("@au_id", obj.author_id);
             cmd.Parameters.AddWithValue("@au_fname", obj.author_name);
@@ -77,6 +80,11 @@ namespace WebAppCRUDPubs.DAL
             cmd.Parameters.AddWithValue("@phone", obj.phone);
             cmd.Parameters.AddWithValue("@address", obj.address);
             cmd.Parameters.AddWithValue("@city", obj.city);
+            cmd.Parameters.AddWithValue("@state", obj.state);
+
+            cmd.Parameters.AddWithValue("@contract", 0);
+
+            cmd.ExecuteNonQuery();
         }
 
         [DataObjectMethod(DataObjectMethodType.Update)]
@@ -88,7 +96,7 @@ namespace WebAppCRUDPubs.DAL
 
             SqlCommand com = conn.CreateCommand();
 
-            SqlCommand cmd = new SqlCommand("Update Authors Set au_id = @au_id, au_fname = @au_fname, au_lname = @au_lname, phone = @phone, address = @address, city = @city, state = @state)", conn);
+            SqlCommand cmd = new SqlCommand("Update Authors Set au_fname = @au_fname, au_lname = @au_lname, phone = @phone, address = @address, city = @city, state = @state Where au_id = @au_id", conn);
 
             cmd.Parameters.AddWithValue("@au_id", obj.author_id);
             cmd.Parameters.AddWithValue("@au_fname", obj.author_name);
@@ -96,6 +104,7 @@ namespace WebAppCRUDPubs.DAL
             cmd.Parameters.AddWithValue("@phone", obj.phone);
             cmd.Parameters.AddWithValue("@address", obj.address);
             cmd.Parameters.AddWithValue("@city", obj.city);
+            cmd.Parameters.AddWithValue("@state", obj.state);
 
             cmd.ExecuteNonQuery();
         }
