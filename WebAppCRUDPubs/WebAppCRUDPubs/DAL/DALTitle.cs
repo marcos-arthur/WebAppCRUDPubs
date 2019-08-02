@@ -17,7 +17,7 @@ namespace WebAppCRUDPubs.DAL
             connectionString = ConfigurationManager.ConnectionStrings["PubsConnectionString"].ConnectionString;
         }
 
-            [DataObjectMethod(DataObjectMethodType.Select)]
+        [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Titles> SelectAll()
         {
             // Variavel para armazenar um livro
