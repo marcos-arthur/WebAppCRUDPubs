@@ -36,7 +36,7 @@
             </asp:GridView>
             <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebAppCRUDPubs.Modelo.Authors" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="WebAppCRUDPubs.DAL.DALAuthors" UpdateMethod="Update"></asp:ObjectDataSource>
             <br />
-            <asp:HyperLink runat="server" Text="Inserir novo autor" NavigateUrl=""></asp:HyperLink>
+            <asp:HyperLink runat="server" Text="Inserir novo autor" NavigateUrl="~\\WebFormAuthorsNew.aspx"></asp:HyperLink>
         </div>
     </form>
 </body>

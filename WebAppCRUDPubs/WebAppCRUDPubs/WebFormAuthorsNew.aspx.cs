@@ -13,5 +13,19 @@ namespace WebAppCRUDPubs
         {
 
         }
+
+        protected void saveButton(object sender, EventArgs e)
+        {
+            Modelo.Authors aAuthors;
+            DAL.DALAuthors aDALAuthor;
+
+            aAuthors = new Modelo.Authors(codigo.Text, nome.Text, lName.Text, phone.Text, address.Text, city.Text, state.Text);
+
+            aDALAuthor = new DAL.DALAuthors();
+
+            aDALAuthor.Insert(aAuthors);
+
+            Response.Redirect("~\\WebFormAuthors.aspx");
+        }
     }
 }
