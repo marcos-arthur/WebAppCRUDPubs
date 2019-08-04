@@ -31,6 +31,15 @@ namespace WebAppCRUDPubs {
         protected global::System.Web.UI.WebControls.TextBox codigo;
         
         /// <summary>
+        /// Controle ObjectDataSource1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        
+        /// <summary>
         /// Controle nome.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace WebAppCRUDPubs {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox editora;
+        
+        /// <summary>
+        /// Controle type.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox type;
         
         /// <summary>
         /// Controle preco.

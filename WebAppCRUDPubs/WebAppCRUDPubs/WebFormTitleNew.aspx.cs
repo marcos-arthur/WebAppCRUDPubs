@@ -20,7 +20,14 @@ namespace WebAppCRUDPubs
             DAL.DALTitle aDALTitle;
 
             // Instancia um objeto de livro com as informações fornecidas
-            aTitles = new Modelo.Titles(codigo.Text, nome.Text, dataPub.Text);
+            aTitles = new Modelo.Titles(    codigo.Text, 
+                                            nome.Text,
+                                            editora.Text,
+                                            type.Text,
+                                            Convert.ToDouble(preco.Text),
+                                            decricao.Text,
+                                            Convert.ToDateTime(dataPub.Text)
+                                            );
 
             // Instancia objeto da camada de negócio
             aDALTitle = new DAL.DALTitle();
