@@ -21,7 +21,6 @@
                     <asp:BoundField DataField="city" HeaderText="Cidade" SortExpression="city" />
                     <asp:BoundField DataField="state" HeaderText="Estado" SortExpression="state" />
                     <asp:ButtonField CommandName="Editar" Text="Editar" />
-                    <asp:ButtonField CommandName="Inserir" Text="Inserir livro" />
                 </Columns>
                 <EditRowStyle BackColor="#2461BF" />
                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -36,7 +35,9 @@
             </asp:GridView>
             <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="WebAppCRUDPubs.Modelo.Authors" DeleteMethod="Delete" InsertMethod="Insert" SelectMethod="SelectAll" TypeName="WebAppCRUDPubs.DAL.DALAuthors" UpdateMethod="Update"></asp:ObjectDataSource>
             <br />
-            <asp:HyperLink runat="server" Text="Inserir novo autor" NavigateUrl=""></asp:HyperLink>
+            <asp:HyperLink runat="server" Text="Inserir novo autor" NavigateUrl="~\\WebFormAuthorsNew.aspx"></asp:HyperLink>
+            <br />
+            <asp:HyperLink runat="server" Text="Inserir novo livro" NavigateUrl="~\\WebFormTitleNew.aspx"></asp:HyperLink>
         </div>
     </form>
 </body>

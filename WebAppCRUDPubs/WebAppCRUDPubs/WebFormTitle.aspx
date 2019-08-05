@@ -18,6 +18,7 @@
                     <asp:BoundField DataField="title_id" HeaderText="Código" SortExpression="title_id" />
                     <asp:BoundField DataField="title" HeaderText="Livro" SortExpression="title" />
                     <asp:BoundField DataField="pub_id" HeaderText="Editora" SortExpression="pub_id" />
+                    <asp:BoundField DataField="type" HeaderText="Tipo" SortExpression="type" />
                     <asp:BoundField DataField="price" HeaderText="Preço" SortExpression="price" DataFormatString="{0:f2}" />
                     <asp:BoundField DataField="notes" HeaderText="Descrição" SortExpression="notes" />
                     <asp:BoundField DataField="pubdate" HeaderText="Data da Publicação" SortExpression="pubdate" DataFormatString="{0:d}" />
