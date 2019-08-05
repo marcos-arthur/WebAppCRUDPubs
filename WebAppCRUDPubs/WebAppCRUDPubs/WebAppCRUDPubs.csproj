@@ -69,7 +69,6 @@
   <ItemGroup>
     <Content Include="script.js" />
     <Content Include="Style.css" />
-    <Content Include="testes.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebFormAuthors.aspx" />
     <Content Include="WebFormAuthorsEdit.aspx" />
@@ -85,12 +84,6 @@
     <Compile Include="Modelo\Authors.cs" />
     <Compile Include="Modelo\Titles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="testes.aspx.cs">
-      <DependentUpon>testes.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="testes.aspx.designer.cs">
-      <DependentUpon>testes.aspx</DependentUpon>
-    </Compile>
     <Compile Include="WebFormAuthors.aspx.cs">
       <DependentUpon>WebFormAuthors.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
