@@ -41,7 +41,13 @@ namespace WebAppCRUDPubs.DAL
                 while (dr.Read()) // Le o proximo registro
                 {
                     // Cria objeto com dados lidos do banco de dados
-                    aTitle = new Modelo.Titles(dr["title_id"].ToString(), dr["title"].ToString(), dr["pub_id"].ToString());
+                    aTitle = new Modelo.Titles( dr["title_id"].ToString(), 
+                                                dr["title"].ToString(), 
+                                                dr["pub_id"].ToString(),
+                                                dr["type"].ToString(),
+                                                conversorD(dr["price"].ToString()),
+                                                dr["notes"].ToString(),
+                                                conversorDT(dr["pubdate"].ToString()));
                     // Adiciona o livro lido à lista
                     aListTitles.Add(aTitle);
                 }
@@ -91,11 +97,15 @@ namespace WebAppCRUDPubs.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("INSERT INTO Titles(title_id, title, pub_id) VALUES(@title_id, @title, @pub_id)", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Titles(title_id, title, pub_id, type, price, notes, pubdate) VALUES(@title_id, @title, @pub_id, @type, @price, @notes, @pubdate)", conn);
 
             cmd.Parameters.AddWithValue("@title_id", obj.title_id);
             cmd.Parameters.AddWithValue("@title", obj.title);
             cmd.Parameters.AddWithValue("@pub_id", obj.pub_id);
+            cmd.Parameters.AddWithValue("@type", obj.type);
+            cmd.Parameters.AddWithValue("@price", obj.price);
+            cmd.Parameters.AddWithValue("@notes", obj.notes);
+            cmd.Parameters.AddWithValue("@pubdate", obj.pubdate);
 
             // Executa Comando
             cmd.ExecuteNonQuery();
@@ -104,7 +114,7 @@ namespace WebAppCRUDPubs.DAL
 
         [DataObjectMethod(DataObjectMethodType.Update)]
         public void Update(Modelo.Titles obj)
-        {
+        {            
             // Cria Conexão com banco de dados
             SqlConnection conn = new SqlConnection(connectionString);
             // Abre conexão com o banco de dados
@@ -112,10 +122,14 @@ namespace WebAppCRUDPubs.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("UPDATE Titles SET title = @title, pub_id = @pub_id WHERE Title_ID = @title_id", conn);
+            SqlCommand cmd = new SqlCommand("UPDATE Titles SET title = @title, pub_id = @pub_id, type = @type, price = @price, pubdate = @pubdate  WHERE Title_ID = @title_id", conn);
             cmd.Parameters.AddWithValue("@title_id", obj.title_id);
             cmd.Parameters.AddWithValue("@title", obj.title);
             cmd.Parameters.AddWithValue("@pub_id", obj.pub_id);
+            cmd.Parameters.AddWithValue("@type", obj.type);
+            cmd.Parameters.AddWithValue("@price", obj.price);
+            cmd.Parameters.AddWithValue("@notes", obj.notes);
+            cmd.Parameters.AddWithValue("@pubdate", obj.pubdate);
 
             // Executa Comando
             cmd.ExecuteNonQuery();
@@ -149,7 +163,13 @@ namespace WebAppCRUDPubs.DAL
             if (dr.HasRows) {
                 while (dr.Read()){ // Lê o próximo registro
                     // Cria objeto com dados lidos do banco de dados
-                    aTitle = new Modelo.Titles(dr["title_id"].ToString(), dr["title"].ToString(), dr["pub_id"].ToString());
+                    aTitle = new Modelo.Titles( dr["title_id"].ToString(),
+                                                dr["title"].ToString(),
+                                                dr["pub_id"].ToString(),
+                                                dr["type"].ToString(),
+                                                conversorD(dr["price"].ToString()),
+                                                dr["notes"].ToString(),
+                                                conversorDT(dr["pubdate"].ToString()));
 
                     // Adiciona o livro à listra
                     aListTitles.Add(aTitle);
@@ -164,6 +184,25 @@ namespace WebAppCRUDPubs.DAL
         }
 
 
+        public int conversorI(string S)
+        {
+            Int32 A = 0;
+            if (S != "") A = Convert.ToInt32(S);
+            return A;
+        }
 
+        public double conversorD(string S)
+        {
+            double A = 0;
+            if (S != "") A = Convert.ToDouble(S);
+            return A;
+        }
+
+        public DateTime conversorDT(string S)
+        {
+            DateTime A = new DateTime();
+            if (S != "") A = Convert.ToDateTime(S);
+            return A;
+        }
     }
 }

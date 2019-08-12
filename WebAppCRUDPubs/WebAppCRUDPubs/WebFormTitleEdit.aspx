@@ -20,7 +20,8 @@
                 <FieldHeaderStyle BackColor="#E9ECF1" Font-Bold="True" />
                 <Fields>
                     <asp:BoundField DataField="title_id" HeaderText="Código" SortExpression="title_id" />
-                    <asp:BoundField DataField="title" HeaderText="Livro" SortExpression="title" />
+                    <asp:BoundField DataField="title" HeaderText="Título" SortExpression="title" />
+                    <asp:BoundField DataField="type" HeaderText="Tipo" SortExpression="type" />
                     <asp:BoundField DataField="pub_id" HeaderText="Editora" SortExpression="pub_id" />
                     <asp:BoundField DataField="price" DataFormatString="{0:f2}" HeaderText="Preço" SortExpression="price" />
                     <asp:BoundField DataField="notes" HeaderText="Descrição" SortExpression="notes" />

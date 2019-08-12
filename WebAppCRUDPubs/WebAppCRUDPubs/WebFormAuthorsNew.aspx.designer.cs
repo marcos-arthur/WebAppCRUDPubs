@@ -10,7 +10,7 @@
 namespace WebAppCRUDPubs {
     
     
-    public partial class WebFormTitleNew {
+    public partial class WebFormAuthorsNew {
         
         /// <summary>
         /// Controle form1.
@@ -31,15 +31,6 @@ namespace WebAppCRUDPubs {
         protected global::System.Web.UI.WebControls.TextBox codigo;
         
         /// <summary>
-        /// Controle ObjectDataSource1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
-        
-        /// <summary>
         /// Controle nome.
         /// </summary>
         /// <remarks>
@@ -49,48 +40,48 @@ namespace WebAppCRUDPubs {
         protected global::System.Web.UI.WebControls.TextBox nome;
         
         /// <summary>
-        /// Controle editora.
+        /// Controle lName.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox editora;
+        protected global::System.Web.UI.WebControls.TextBox lName;
         
         /// <summary>
-        /// Controle type.
+        /// Controle phone.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox type;
+        protected global::System.Web.UI.WebControls.TextBox phone;
         
         /// <summary>
-        /// Controle preco.
+        /// Controle address.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox preco;
+        protected global::System.Web.UI.WebControls.TextBox address;
         
         /// <summary>
-        /// Controle decricao.
+        /// Controle city.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox decricao;
+        protected global::System.Web.UI.WebControls.TextBox city;
         
         /// <summary>
-        /// Controle dataPub.
+        /// Controle state.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox dataPub;
+        protected global::System.Web.UI.WebControls.TextBox state;
     }
 }

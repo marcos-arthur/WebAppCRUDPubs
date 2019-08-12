@@ -11,7 +11,7 @@ namespace WebAppCRUDPubs.Modelo
         public string author_name { get; set; }
         public string author_last_name { get; set; }
         public string phone { get; set; }
-        public string adress { get; set; }
+        public string address { get; set; }
         public string city { get; set; }
         public string state { get; set; }
 
@@ -22,7 +22,7 @@ namespace WebAppCRUDPubs.Modelo
             author_name = "";
             author_last_name = "";
             phone = "";
-            adress = "";
+            address = "";
             city = "";
             state = "";
         }
@@ -40,7 +40,7 @@ namespace WebAppCRUDPubs.Modelo
             author_name = aN;
             author_last_name = aLN;
             phone = p;
-            adress = a;
+            address = a;
             city = c;
             state = s;
         }
