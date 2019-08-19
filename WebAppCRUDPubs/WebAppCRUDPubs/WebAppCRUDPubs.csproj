@@ -73,6 +73,7 @@
     <Content Include="WebFormAuthors.aspx" />
     <Content Include="WebFormAuthorsEdit.aspx" />
     <Content Include="WebFormAuthorsNew.aspx" />
+    <Content Include="WebFormAuthorsRep.aspx" />
     <Content Include="WebFormMenu.aspx" />
     <Content Include="WebFormTitle.aspx" />
     <Content Include="WebFormTitleEdit.aspx" />
@@ -104,6 +105,13 @@
     </Compile>
     <Compile Include="WebFormAuthorsNew.aspx.designer.cs">
       <DependentUpon>WebFormAuthorsNew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormAuthorsRep.aspx.cs">
+      <DependentUpon>WebFormAuthorsRep.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormAuthorsRep.aspx.designer.cs">
+      <DependentUpon>WebFormAuthorsRep.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormMenu.aspx.cs">
       <DependentUpon>WebFormMenu.aspx</DependentUpon>

@@ -14,17 +14,21 @@ namespace WebAppCRUDPubs.Modelo
         public string address { get; set; }
         public string city { get; set; }
         public string state { get; set; }
+        public string zip { get; set; }
+        public bool contract { get; set; }
 
         // Construtor
         public Authors()
         {
             author_id = "";
             author_name = "";
-            author_last_name = "";
+            author_name = "";
             phone = "";
             address = "";
             city = "";
             state = "";
+            zip = "xxxxxx";
+            contract = false;
         }
 
         public Authors( string aI, 

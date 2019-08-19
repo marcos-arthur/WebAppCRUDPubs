@@ -12,7 +12,9 @@
         <div>
             <asp:HyperLink runat="server" Text="Cadastro de Livros" NavigateUrl="~/WebFormTitle.aspx"></asp:HyperLink>
             <br />
-            <asp:HyperLink runat="server" Text="Cadastro de Autores" NavigateUrl="~/WebFormAuthors.aspx"></asp:HyperLink>
+            <!--<asp:HyperLink runat="server" Text="Cadastro de Autores" NavigateUrl="~/WebFormAuthors.aspx"></asp:HyperLink>
+            <br /> -->
+            <asp:HyperLink runat="server" Text="Cadastro de Autores" NavigateUrl="~/WebFormAuthorsRep.aspx"></asp:HyperLink>            
         </div>
     </form>
 </body>
